@@ -9,12 +9,13 @@ export const metadata = {
   title: "Admin - 3 Amores",
 };
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = headers().get("x-next-url");
+  const headersList = await headers(); // ✅ Correto: headers() é async
+  const pathname = headersList.get("x-next-url");
   const isLogin = pathname === "/admin";
 
   return (
