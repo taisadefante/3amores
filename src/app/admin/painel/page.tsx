@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebaseConfig";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { type User } from "firebase/auth";
 import { Button, Container } from "react-bootstrap";
 
 export default function PainelAdmin() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (usuario) => {
@@ -17,11 +18,6 @@ export default function PainelAdmin() {
     });
     return () => unsubscribe();
   }, [router]);
-
-  const sair = async () => {
-    await signOut(auth);
-    router.push("/admin/login");
-  };
 
   return (
     <Container className="py-5 text-center">
