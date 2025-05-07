@@ -83,11 +83,31 @@ export default function HomePage() {
             className="mb-3 fw-bold"
             style={{ fontSize: "2.8rem", color: "#d17e53" }}
           >
-            Seja bem-vindo(a) à 3 Amores 🍩
+            3 Amores 🍩
           </h1>
           <p className="lead text-muted" style={{ fontSize: "1.25rem" }}>
             Mini donuts com carinho e sabor
           </p>
+
+          <a
+            href="https://wa.me/5521996696713"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="d-inline-block fw-semibold"
+            style={{
+              backgroundColor: "#f5b3c3",
+              color: "#fff",
+              padding: "0.6rem 1.4rem",
+              borderRadius: "2rem",
+              textDecoration: "none",
+              fontSize: "1rem",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+              animation: "pulse 2s infinite",
+              transition: "all 0.3s ease-in-out",
+            }}
+          >
+            <i className="bi bi-whatsapp me-2"></i> Fale Conosco
+          </a>
         </div>
 
         <div
@@ -98,7 +118,7 @@ export default function HomePage() {
             width: "100%",
             height: "80px",
             background:
-              'url(\'data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23fff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,117.3C384,107,480,117,576,122.7C672,128,768,128,864,117.3C960,107,1056,85,1152,74.7C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>\')',
+              "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23fff' fill-opacity='1' d='M0,192L48,176C96,160,192,128,288,117.3C384,107,480,117,576,122.7C672,128,768,128,864,117.3C960,107,1056,85,1152,74.7C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'></path></svg>\")",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
@@ -107,10 +127,16 @@ export default function HomePage() {
 
       <WaveDivider />
 
-      <section className="py-5 bg-white text-center" data-aos="fade-up">
-        <h2 className="mb-4">Sobre Juliana Defante</h2>
+      <section
+        className="py-5 text-center"
+        style={{ backgroundColor: "#f5b3c3" }}
+        data-aos="fade-up"
+      >
+        <h2 className="mb-4" style={{ color: "#8b4513" }}>
+          Sobre Juliana Defante
+        </h2>
         <Container>
-          <p className="mx-auto" style={{ maxWidth: 700 }}>
+          <p className="mx-auto" style={{ maxWidth: 700, color: "#fff" }}>
             Juliana é a alma por trás da 3 Amores. Com amor pela confeitaria e
             atenção aos detalhes, ela transforma cada mini donut em uma
             experiência doce e memorável. Tudo é feito com carinho, cuidado e um
@@ -122,7 +148,8 @@ export default function HomePage() {
       <WaveDivider flip />
 
       <section className="py-5" style={{ backgroundColor: "#f5b3c3" }}>
-        <h2 className="text-center text-white mb-4" data-aos="fade-right">
+        <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
+          {" "}
           Destaques do Catálogo
         </h2>
         <Container>
@@ -162,7 +189,8 @@ export default function HomePage() {
       <WaveDivider />
 
       <section className="py-5 bg-white text-center">
-        <h2 className="mb-4" data-aos="fade-left">
+        <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
+          {" "}
           Nossos vídeos
         </h2>
         <Container>
