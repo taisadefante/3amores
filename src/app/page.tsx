@@ -149,7 +149,6 @@ export default function HomePage() {
 
       <section className="py-5" style={{ backgroundColor: "#f5b3c3" }}>
         <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
-          {" "}
           Destaques do Catálogo
         </h2>
         <Container>
@@ -178,19 +177,45 @@ export default function HomePage() {
           </Row>
           <div className="text-center mt-4" data-aos="fade-up">
             <a href="/catalogo">
-              <button className="btn btn-light px-4">
+              <button
+                style={{
+                  backgroundColor: "#fff",
+                  color: "#8b2c43",
+                  border: "2px solid #f5b3c3",
+                  borderRadius: "30px",
+                  padding: "10px 25px",
+                  fontWeight: "bold",
+                  animation: "pulse 2s infinite",
+                }}
+              >
                 Ver Catálogo Completo
               </button>
             </a>
           </div>
         </Container>
+
+        <style>{`
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(139, 44, 67, 0.6);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(139, 44, 67, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(139, 44, 67, 0);
+      }
+    }
+  `}</style>
       </section>
 
       <WaveDivider />
 
       <section className="py-5 bg-white text-center">
         <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
-          {" "}
           Nossos vídeos
         </h2>
         <Container>
@@ -211,7 +236,42 @@ export default function HomePage() {
               </Col>
             ))}
           </Row>
+
+          <div className="mt-4">
+            <a href="/videos">
+              <button
+                style={{
+                  backgroundColor: "#f5b3c3",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "30px",
+                  padding: "10px 25px",
+                  fontWeight: "bold",
+                  animation: "pulse 2s infinite",
+                }}
+              >
+                Veja todos os nossos vídeos
+              </button>
+            </a>
+          </div>
         </Container>
+
+        <style>{`
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 179, 195, 0.6);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(245, 179, 195, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 179, 195, 0);
+      }
+    }
+  `}</style>
       </section>
 
       <WaveDivider flip />
