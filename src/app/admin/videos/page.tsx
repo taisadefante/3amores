@@ -80,7 +80,9 @@ export default function VideosPage() {
 
   return (
     <Container className="py-5">
-      <h2 className="mb-3 text-start">Cadastro de Vídeos</h2>
+      <h2 className="mb-3 text-center fw-bold" style={{ color: "#8b4513" }}>
+        Cadastro de Vídeos
+      </h2>
 
       <Form onSubmit={salvarVideo}>
         {mensagem && <Alert variant="success">{mensagem}</Alert>}
@@ -96,28 +98,45 @@ export default function VideosPage() {
           />
         </Form.Group>
 
-        <Button type="submit" variant="dark">
-          <i className="bi bi-upload me-1"></i> Enviar Vídeo
-        </Button>
+        <div className="text-center">
+          <Button
+            type="submit"
+            style={{
+              backgroundColor: "#f5b3c3",
+              color: "#fff",
+              border: "none",
+              borderRadius: "30px",
+              padding: "10px 30px",
+              fontWeight: "bold",
+            }}
+          >
+            <i className="bi bi-upload me-2"></i> Enviar Vídeo
+          </Button>
+        </div>
       </Form>
 
       <hr className="my-5" />
-      <h4 className="mb-3">Vídeos Cadastrados</h4>
+      <h4 className="mb-3 text-center">Vídeos Cadastrados</h4>
 
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th>Visualização</th>
+            <th className="text-center">Visualização</th>
             <th className="text-center">Ações</th>
           </tr>
         </thead>
         <tbody>
           {videos.map((video) => (
             <tr key={video.id}>
-              <td>
-                <video src={video.videoUrl} width="250" controls />
+              <td className="text-center" style={{ verticalAlign: "middle" }}>
+                <video
+                  src={video.videoUrl}
+                  width="180"
+                  controls
+                  style={{ borderRadius: "8px" }}
+                />
               </td>
-              <td className="text-center">
+              <td className="text-center" style={{ verticalAlign: "middle" }}>
                 <Button
                   variant="outline-danger"
                   size="sm"

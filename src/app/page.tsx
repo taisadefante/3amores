@@ -71,7 +71,7 @@ export default function HomePage() {
   return (
     <>
       <section
-        className="text-center py-5 position-relative"
+        className="text-center py-5 position-relative mb-3"
         style={{
           background: "linear-gradient(135deg, #fff6f0, #ffe8dc)",
           overflow: "hidden",
@@ -93,7 +93,7 @@ export default function HomePage() {
             href="https://wa.me/5521996696713"
             target="_blank"
             rel="noopener noreferrer"
-            className="d-inline-block fw-semibold"
+            className="d-inline-block fw-semibold mb-4"
             style={{
               backgroundColor: "#f5b3c3",
               color: "#fff",

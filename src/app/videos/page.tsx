@@ -31,7 +31,9 @@ export default function VideosPublicos() {
 
   return (
     <Container className="py-5">
-      <h1 className="text-center mb-4">Vídeos e Bastidores 🎥</h1>
+      <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
+        Vídeos e Bastidores 🎥
+      </h2>
       <p className="text-center text-muted">
         Conheça os encantos por trás dos nossos mini donuts 🍩
       </p>

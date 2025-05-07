@@ -10,7 +10,7 @@ export default function Footer() {
       className="text-center py-4 mt-5"
     >
       <Container>
-        <p className="mb-1">© 2025 3 Amores. Todos os direitos reservados.</p>
+        <p className="mb-1">© 2025 - 3 Amores. Todos os direitos reservados.</p>
         <p className="mb-0">
           Desenvolvido por:{" "}
           <a

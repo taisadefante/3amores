@@ -54,7 +54,9 @@ export default function CatalogoPage() {
 
   return (
     <Container className="py-5">
-      <h1 className="text-center mb-4">Nosso Catálogo 🍩</h1>
+      <h2 className="mb-4" style={{ color: "#8b4513", textAlign: "center" }}>
+        Nosso Catálogo 🍩
+      </h2>
       <p className="text-center text-muted">
         Veja todos os nossos mini donuts separados por temas encantadores
       </p>

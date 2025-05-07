@@ -265,7 +265,7 @@ export default function ProdutosPage() {
         <tbody>
           {produtos.map((produto) => (
             <tr key={produto.id}>
-              <td>
+              <td style={{ verticalAlign: "middle" }}>
                 <Image
                   src={produto.imagemUrl}
                   alt={produto.nome || "Produto"}
@@ -275,10 +275,12 @@ export default function ProdutosPage() {
                   style={{ objectFit: "cover" }}
                 />
               </td>
-              <td>{produto.nome || "-"}</td>
-              <td>{produto.tema || "-"}</td>
-              <td>{produto.descricao || "-"}</td>
-              <td>
+              <td style={{ verticalAlign: "middle" }}>{produto.nome || "-"}</td>
+              <td style={{ verticalAlign: "middle" }}>{produto.tema || "-"}</td>
+              <td style={{ verticalAlign: "middle" }}>
+                {produto.descricao || "-"}
+              </td>
+              <td style={{ verticalAlign: "middle" }}>
                 <div className="d-flex justify-content-center gap-2">
                   <Button
                     variant="outline-primary"
