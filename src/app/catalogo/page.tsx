@@ -33,7 +33,12 @@ export default function CatalogoPage() {
       setProdutos(lista);
 
       const temasUnicos = new Set<string>(
-        lista.map((p) => p.tema).filter((tema) => tema && tema.trim() !== "")
+        lista
+          .map((p) => p.tema)
+          .filter(
+            (tema): tema is string =>
+              typeof tema === "string" && tema.trim() !== ""
+          )
       );
 
       setTemas(Array.from(temasUnicos));
