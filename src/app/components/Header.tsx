@@ -46,7 +46,7 @@ export default function Header() {
             </Link>
             <div className="d-flex align-items-center gap-3 ms-3">
               <a
-                href="https://www.instagram.com/seu_instagram"
+                href="https://www.instagram.com/minicakedonuts3amores/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={linkStyle}
@@ -56,7 +56,7 @@ export default function Header() {
                 <FaInstagram size={20} />
               </a>
               <a
-                href="https://wa.me/5521988359825"
+                href="https://wa.me/5521996696713"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={linkStyle}

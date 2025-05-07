@@ -63,13 +63,15 @@ export default function CatalogoPage() {
 
       {/* Select de tema */}
       <Form.Group className="mb-4 text-center">
-        <Form.Label className="fw-bold me-2">Filtrar por tema:</Form.Label>
+        <Form.Label className="fw-bold me-2">
+          Filtrar por tema ou tipos:
+        </Form.Label>
         <Form.Select
           style={{ maxWidth: "300px", margin: "0 auto" }}
           value={temaSelecionado}
           onChange={(e) => setTemaSelecionado(e.target.value)}
         >
-          <option value="todos">Todos os temas</option>
+          <option value="todos">Todos os temas ou tipos</option>
           {temas.map((tema) => (
             <option key={tema} value={tema}>
               {tema}

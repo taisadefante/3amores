@@ -46,9 +46,7 @@ export default function HomePage() {
         ...doc.data(),
       })) as Video[];
 
-      const videosAleatorios = listaVideos
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
+      const videosAleatorios = listaVideos.sort(() => Math.random() - 0.5);
 
       setProdutos(listaProdutos);
       setVideos(videosAleatorios);
@@ -193,23 +191,6 @@ export default function HomePage() {
             </a>
           </div>
         </Container>
-
-        <style>{`
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(139, 44, 67, 0.6);
-      }
-      70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(139, 44, 67, 0);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(139, 44, 67, 0);
-      }
-    }
-  `}</style>
       </section>
 
       <WaveDivider />
@@ -220,7 +201,7 @@ export default function HomePage() {
         </h2>
         <Container>
           <Row className="justify-content-center">
-            {videos.map((video) => (
+            {videos.slice(0, 3).map((video) => (
               <Col md={4} key={video.id} className="mb-4" data-aos="fade-up">
                 <div className="ratio ratio-16x9">
                   <video
@@ -252,6 +233,57 @@ export default function HomePage() {
               >
                 Veja todos os nossos vídeos
               </button>
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      <WaveDivider flip />
+
+      <section
+        className="py-5 text-center"
+        style={{
+          background: "linear-gradient(135deg, #ffe8dc, #fff0f5)",
+          color: "#8b4513",
+        }}
+      >
+        <Container>
+          <h2 className="mb-4 fw-bold" style={{ fontSize: "2.2rem" }}>
+            Transforme sua festa em um momento inesquecível 🎉
+          </h2>
+          <p
+            className="mx-auto"
+            style={{
+              maxWidth: "700px",
+              fontSize: "1.1rem",
+              color: "#5c3b2e",
+            }}
+          >
+            Encante seus convidados com nossos mini donuts artesanais!
+            Personalizamos com o tema da sua festa, entregamos com carinho e
+            garantimos aquele “uau” na sua mesa. Ideal para aniversários, chás
+            de bebê, eventos corporativos e muito mais!
+          </p>
+
+          <div className="mt-4">
+            <a
+              href="https://wa.me/5521996696713?text=Olá!%20Gostaria%20de%20encomendar%20mini%20donuts%20para%20minha%20festa!"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: "#f5b3c3",
+                color: "#fff",
+                border: "none",
+                borderRadius: "30px",
+                padding: "12px 30px",
+                fontWeight: "bold",
+                fontSize: "1rem",
+                textDecoration: "none",
+                animation: "pulse 2s infinite",
+              }}
+            >
+              <i className="bi bi-whatsapp me-2"></i> Quero encantar minha
+              festa!
             </a>
           </div>
         </Container>
@@ -305,15 +337,15 @@ export default function HomePage() {
         @keyframes pulse {
           0% {
             transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            box-shadow: 0 0 0 0 rgba(245, 179, 195, 0.6);
           }
           70% {
-            transform: scale(1.1);
-            box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            transform: scale(1.05);
+            box-shadow: 0 0 0 10px rgba(245, 179, 195, 0);
           }
           100% {
             transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            box-shadow: 0 0 0 0 rgba(245, 179, 195, 0);
           }
         }
       `}</style>
