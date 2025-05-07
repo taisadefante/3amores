@@ -228,7 +228,9 @@ export default function ProdutosPage() {
               <Form.Control
                 type="file"
                 accept="image/*"
-                onChange={(e) => setImagem(e.target.files?.[0] || null)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setImagem(e.currentTarget.files?.[0] || null)
+                }
               />
             </Form.Group>
 
