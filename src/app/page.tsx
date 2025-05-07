@@ -9,10 +9,23 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import WaveDivider from "./components/WaveDivider";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+interface Produto {
+  id: string;
+  nome: string;
+  descricao: string;
+  imagemUrl: string;
+}
+
+interface Video {
+  id: string;
+  videoUrl: string;
+  descricao?: string;
+}
+
 export default function HomePage() {
-  const [produtos, setProdutos] = useState<any[]>([]);
-  const [videos, setVideos] = useState<any[]>([]);
-  const [grupoIndex, setGrupoIndex] = useState(0);
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]);
+  const [grupoIndex, setGrupoIndex] = useState<number>(0);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -23,15 +36,15 @@ export default function HomePage() {
       const prodSnap = await getDocs(collection(db, "produtos"));
       const vidSnap = await getDocs(collection(db, "videos"));
 
-      const listaProdutos = prodSnap.docs.map((doc) => ({
+      const listaProdutos: Produto[] = prodSnap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }));
+      })) as Produto[];
 
-      const listaVideos = vidSnap.docs.map((doc) => ({
+      const listaVideos: Video[] = vidSnap.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }));
+      })) as Video[];
 
       const videosAleatorios = listaVideos
         .sort(() => Math.random() - 0.5)
@@ -154,8 +167,8 @@ export default function HomePage() {
         </h2>
         <Container>
           <Row className="justify-content-center">
-            {videos.map((video, idx) => (
-              <Col md={4} key={idx} className="mb-4" data-aos="fade-up">
+            {videos.map((video) => (
+              <Col md={4} key={video.id} className="mb-4" data-aos="fade-up">
                 <div className="ratio ratio-16x9">
                   <video
                     src={video.videoUrl}
@@ -175,7 +188,6 @@ export default function HomePage() {
 
       <WaveDivider flip />
 
-      {/* Botão fixo do WhatsApp */}
       <a
         href="https://wa.me/5521988359825"
         target="_blank"

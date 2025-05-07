@@ -27,6 +27,7 @@ import {
   Table,
   Modal,
 } from "react-bootstrap";
+import Image from "next/image";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 interface Produto {
@@ -39,18 +40,18 @@ interface Produto {
 }
 
 export default function ProdutosPage() {
-  const [nome, setNome] = useState("");
-  const [tema, setTema] = useState("");
-  const [descricao, setDescricao] = useState("");
+  const [nome, setNome] = useState<string>("");
+  const [tema, setTema] = useState<string>("");
+  const [descricao, setDescricao] = useState<string>("");
   const [imagem, setImagem] = useState<File | null>(null);
   const [produtos, setProdutos] = useState<Produto[]>([]);
-  const [mensagem, setMensagem] = useState("");
-  const [modoEdicao, setModoEdicao] = useState(false);
-  const [produtoIdEdicao, setProdutoIdEdicao] = useState("");
-  const [imagemPathAntiga, setImagemPathAntiga] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  const [mensagem, setMensagem] = useState<string>("");
+  const [modoEdicao, setModoEdicao] = useState<boolean>(false);
+  const [produtoIdEdicao, setProdutoIdEdicao] = useState<string>("");
+  const [imagemPathAntiga, setImagemPathAntiga] = useState<string>("");
+  const [showModal, setShowModal] = useState<boolean>(false);
 
-  const carregarProdutos = async () => {
+  const carregarProdutos = async (): Promise<void> => {
     const querySnapshot = await getDocs(collection(db, "produtos"));
     const lista: Produto[] = [];
     querySnapshot.forEach((doc) => {
@@ -64,7 +65,7 @@ export default function ProdutosPage() {
     carregarProdutos();
   }, []);
 
-  const resetarFormulario = () => {
+  const resetarFormulario = (): void => {
     setNome("");
     setTema("");
     setDescricao("");
@@ -75,17 +76,19 @@ export default function ProdutosPage() {
     setMensagem("");
   };
 
-  const abrirModal = () => {
+  const abrirModal = (): void => {
     resetarFormulario();
     setShowModal(true);
   };
 
-  const fecharModal = () => {
+  const fecharModal = (): void => {
     setShowModal(false);
     resetarFormulario();
   };
 
-  const salvarProduto = async (e: React.FormEvent) => {
+  const salvarProduto = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
 
     if (modoEdicao) {
@@ -140,13 +143,16 @@ export default function ProdutosPage() {
     fecharModal();
   };
 
-  const excluirProduto = async (id: string, imagemPath: string) => {
+  const excluirProduto = async (
+    id: string,
+    imagemPath: string
+  ): Promise<void> => {
     await deleteDoc(doc(db, "produtos", id));
     await deleteObject(ref(storage, imagemPath));
     carregarProdutos();
   };
 
-  const editarProduto = (produto: Produto) => {
+  const editarProduto = (produto: Produto): void => {
     setNome(produto.nome || "");
     setTema(produto.tema || "");
     setDescricao(produto.descricao || "");
@@ -164,7 +170,7 @@ export default function ProdutosPage() {
         <Button
           onClick={abrirModal}
           style={{
-            backgroundColor: "#8B4513", // marrom
+            backgroundColor: "#8B4513",
             color: "#fff",
             border: "none",
           }}
@@ -258,11 +264,13 @@ export default function ProdutosPage() {
           {produtos.map((produto) => (
             <tr key={produto.id}>
               <td>
-                <img
+                <Image
                   src={produto.imagemUrl}
                   alt={produto.nome || "Produto"}
                   width={80}
+                  height={80}
                   className="rounded"
+                  style={{ objectFit: "cover" }}
                 />
               </td>
               <td>{produto.nome || "-"}</td>

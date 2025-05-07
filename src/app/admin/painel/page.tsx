@@ -33,10 +33,6 @@ export default function PainelAdmin() {
       <Button variant="outline-dark" href="/admin/videos" className="m-2">
         Gerenciar Vídeos
       </Button>
-      <hr />
-      <Button variant="danger" onClick={sair}>
-        Sair
-      </Button>
     </Container>
   );
 }
