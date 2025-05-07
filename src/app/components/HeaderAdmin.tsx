@@ -9,10 +9,10 @@ import {
   Button,
   Toast,
   ToastContainer,
-  Image,
 } from "react-bootstrap";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebaseConfig";
+import Image from "next/image";
 
 export default function HeaderAdmin() {
   const router = useRouter();
@@ -50,7 +50,7 @@ export default function HeaderAdmin() {
               alt="Logo 3 Amores"
               width={50}
               height={50}
-              roundedCircle
+              style={{ borderRadius: "50%" }}
             />
             <span className="fw-bold text-brown">Painel Admin</span>
           </Navbar.Brand>
@@ -77,7 +77,6 @@ export default function HeaderAdmin() {
         </Container>
       </Navbar>
 
-      {/* Toast */}
       <ToastContainer position="top-end" className="p-3">
         <Toast
           bg="success"

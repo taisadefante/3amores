@@ -12,10 +12,6 @@ export default function Header() {
     textDecoration: "none",
   };
 
-  const hoverStyle = {
-    color: "#ffffffcc",
-  };
-
   return (
     <Navbar
       expand="lg"
