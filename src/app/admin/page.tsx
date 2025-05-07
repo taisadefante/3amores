@@ -28,9 +28,11 @@ export default function AdminLogin() {
     try {
       await signInWithEmailAndPassword(auth, email, senha);
       router.push("/admin/painel");
-    } catch (error: any) {
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Erro no login:", error.message);
+      }
       setErro("Email ou senha inválidos.");
-      console.error("Erro no login:", error.message);
     }
   };
 
