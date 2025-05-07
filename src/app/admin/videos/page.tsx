@@ -90,7 +90,9 @@ export default function VideosPage() {
           <Form.Control
             type="file"
             accept="video/*"
-            onChange={(e) => setVideo(e.target.files?.[0] || null)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setVideo(e.currentTarget.files?.[0] || null)
+            }
           />
         </Form.Group>
 
