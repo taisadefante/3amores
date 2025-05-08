@@ -68,6 +68,49 @@ export default function HomePage() {
 
   return (
     <>
+      <Head>
+        <title>Mini Donuts para Festas em Campo Grande - RJ | 3 Amores</title>
+        <meta
+          name="description"
+          content="Mini donuts personalizados para festas e eventos em Campo Grande, Rio de Janeiro. Encomende agora nossos mini cake donuts artesanais!"
+        />
+        <meta
+          name="keywords"
+          content="mini donuts, doces personalizados, festa infantil, casamento, Campo Grande, Rio de Janeiro, mini cake donuts, 3 Amores"
+        />
+        <meta name="author" content="3 Amores Doces Artesanais" />
+        <meta name="robots" content="index, follow" />
+        <meta name="geo.region" content="BR-RJ" />
+        <meta name="geo.placename" content="Campo Grande, Rio de Janeiro" />
+        <meta name="geo.position" content="-22.9014;-43.5616" />
+        <meta name="ICBM" content="-22.9014, -43.5616" />
+        <link rel="canonical" href="https://3amores.defan.com.br/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Bakery",
+              name: "3 Amores Mini Donuts",
+              image: "https://3amores.defan.com.br/logo.jpg",
+              "@id": "https://3amores.defan.com.br",
+              url: "https://3amores.defan.com.br",
+              telephone: "+5521996696713",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Campo Grande",
+                addressLocality: "Rio de Janeiro",
+                postalCode: "23000-000",
+                addressCountry: "BR",
+              },
+              areaServed: "Campo Grande, Rio de Janeiro",
+              description:
+                "Mini donuts artesanais personalizados para festas, casamentos e eventos. Atendemos Campo Grande e regiões próximas no Rio de Janeiro.",
+            }),
+          }}
+        />
+      </Head>
+
       <section
         className="text-center py-5 position-relative mb-3"
         style={{
@@ -83,8 +126,15 @@ export default function HomePage() {
           >
             3 Amores 🍩
           </h1>
-          <p className="lead text-muted" style={{ fontSize: "1.25rem" }}>
-            Mini donuts com carinho e sabor
+          <p
+            className="lead"
+            style={{
+              fontSize: "1.25rem",
+              color: "#4B2E1E",
+              fontWeight: "bold",
+            }}
+          >
+            Mini cake donuts com carinho e sabor
           </p>
 
           <a
@@ -309,7 +359,7 @@ export default function HomePage() {
       <WaveDivider flip />
 
       <a
-        href="https://wa.me/5521988359825"
+        href="https://wa.me/5521996696713"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-button"
