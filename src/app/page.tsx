@@ -182,7 +182,7 @@ export default function HomePage() {
         data-aos="fade-up"
       >
         <h2 className="mb-4" style={{ color: "#8b4513" }}>
-          Sobre Juliana Defante
+          Sobre Juliana Azevedo
         </h2>
         <Container>
           <p className="mx-auto" style={{ maxWidth: 700, color: "#fff" }}>

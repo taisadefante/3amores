@@ -58,7 +58,7 @@ export default function CatalogoPage() {
         Nosso Catálogo 🍩
       </h2>
       <p className="text-center text-muted">
-        Veja todos os nossos mini donuts separados por temas encantadores
+        Veja todos os nossos mini cake donuts separados por temas encantadores
       </p>
 
       {/* Select de tema */}
