@@ -187,7 +187,7 @@ export default function HomePage() {
         <Container>
           <p className="mx-auto" style={{ maxWidth: 700, color: "#fff" }}>
             Juliana é a alma por trás da 3 Amores. Com amor pela confeitaria e
-            atenção aos detalhes, ela transforma cada mini donut em uma
+            atenção aos detalhes, ela transforma cada mini cake donuts em uma
             experiência doce e memorável. Tudo é feito com carinho, cuidado e um
             toque artesanal único. 💕
           </p>
