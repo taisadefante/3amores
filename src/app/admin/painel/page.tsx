@@ -14,7 +14,7 @@ export default function PainelAdmin() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (usuario) => {
       if (usuario) setUser(usuario);
-      else router.push("/admin/login");
+      else router.push("/admin");
     });
     return () => unsubscribe();
   }, [router]);
